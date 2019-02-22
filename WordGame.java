@@ -88,7 +88,6 @@ public class WordGame {
                     System.out.println("The word is: " + incorrect[index]);
                     System.out.print("Is this word misspelled? y/n ");
                     answer = console.next();
-
                     //user guess data validation
                     while (!(answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n"))) {
                         System.out.print("Please enter \"n\" or \"y\" ");
