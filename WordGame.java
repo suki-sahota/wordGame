@@ -21,19 +21,19 @@ public class WordGame {
     
     
     public static void fillArray(String[] correct, String[] incorrect) throws IOException {
-        //locate file
+        // Locate file
         File f1 = new File("wordRight.txt");
         File f2 = new File("wordWrong.txt");
-        //create point to the file
+        // Create point to the file
         Scanner input1 = new Scanner(f1);
         Scanner input2 = new Scanner(f2);
         
-        //filling correctly spelled array
+        // Filling correctly spelled array
         for (int i = 0; i < 20; i++) {
             if (input1.hasNext()) {
                 correct[i] = input1.next();
             }
-        //filling incorrectly spelled array
+        // Filling incorrectly spelled array
         } for (int i = 0; i < 20; i++) {
             if (input2.hasNext()) {
                 incorrect[i] = input2.next();
@@ -53,17 +53,17 @@ public class WordGame {
         
             for (int i = 1; i <= 5; i++) {
 
-                //loop for correctly spelled array
+                // Loop for correctly spelled array
                 if (rand.nextBoolean()) {
                     index = rand.nextInt(20);
-                    //validation loop to ensure new words
+                    // Validation loop to ensure new words
                     while (correct[index].equalsIgnoreCase("null")) {
                         index = rand.nextInt(20);
                     } 
                     System.out.println("The word is: " + correct[index]);
                     System.out.print("Is this word misspelled? y/n ");
                     answer = console.next();
-                    //user guess data validation
+                    // User guess data validation
                     while (!(answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n"))) {
                         System.out.print("Please enter \"n\" or \"y\" ");
                         answer = console.next();
@@ -78,17 +78,17 @@ public class WordGame {
                     correct[index] = "null";
                 } 
                 
-                //loop for incorrectly spelled array
+                // Loop for incorrectly spelled array
                 else {
                     index = rand.nextInt(20);
-                    //validation loop to ensure new words
+                    // Validation loop to ensure new words
                     while (incorrect[index].equalsIgnoreCase("null")) {
                         index = rand.nextInt(20);
                     }
                     System.out.println("The word is: " + incorrect[index]);
                     System.out.print("Is this word misspelled? y/n ");
                     answer = console.next();
-                    //user guess data validation
+                    // User guess data validation
                     while (!(answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n"))) {
                         System.out.print("Please enter \"n\" or \"y\" ");
                         answer = console.next();
@@ -108,7 +108,7 @@ public class WordGame {
             points = 0;
             System.out.print("Type 'y' if you would like to play again, and 'n' if not.");
             playAgain = console.next();
-            //user choice data validation
+            // User choice data validation
             while (!(playAgain.equalsIgnoreCase("y") || playAgain.equalsIgnoreCase("n"))) {
                 System.out.print("Please enter \"n\" or \"y\".");
                 playAgain = console.next();
